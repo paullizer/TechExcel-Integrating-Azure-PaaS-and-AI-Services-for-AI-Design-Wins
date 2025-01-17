@@ -35,6 +35,10 @@ namespace ContosoSuitesWebAPI.Services
 
                 var vector = embeddings.ToArray();
 
+                if (vector == null || vector.Length == 0)
+                {
+                    Console.WriteLine($"[WARNING] No embeddings generated for text: {text}");
+                }
 
                 // Return the vector embeddings.
                 return vector;
